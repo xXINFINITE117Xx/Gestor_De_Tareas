@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TaskForm from "./Components/TaskForm/TaskForm";
 import TaskList from "./Components/TaskList/TaskList";
+import profileImage from './images/profile.jpg';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -36,6 +37,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <img src={profileImage} alt="Profile" className="profile-image" />
       <h1>Gestor de Tareas</h1>
       <p>
         usted tiene {tasks.filter((task) => !task.completed).length} pendientes
