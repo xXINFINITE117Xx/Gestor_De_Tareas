@@ -26,15 +26,17 @@ const TaskForm = ({ addTask, editTask, currentTask }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Titulo de la tarea</h2>
       <input
         type="text"
-        placeholder="Título de la tarea"
+        placeholder="Ej Aseo Ambiente"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      <h2>Descripción de la tarea</h2>
       <input
         type="text"
-        placeholder="Descripción de la tarea"
+        placeholder="Ej Realizar aseo del ambiente"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
