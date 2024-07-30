@@ -46,7 +46,7 @@ const App = () => {
         editTask={editTask}
         currentTask={currentTask}
       />
-      <div>
+      <div className="filter">
         <label>Filtrar por: </label>
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="all">Todas</option>
