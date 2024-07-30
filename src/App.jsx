@@ -48,7 +48,7 @@ const App = () => {
       />
       <div className="filter">
         <label>Filtrar por: </label>
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <select className="selector" value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="all">Todas</option>
           <option value="pending">Pendientes</option>
           <option value="completed">Completadas</option>
