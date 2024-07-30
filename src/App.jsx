@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TaskForm from "./Components/TaskForm/TaskForm";
 import TaskList from "./Components/TaskList/TaskList";
-import profileImage from "./images/profile.jpg"; 
 import "./Styles/styles.css"; 
 
 const App = () => {
@@ -42,7 +41,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="header">
-        <img src={profileImage} alt="Profile" className="profile-image" />
+      <img src="/profile.jpg" alt="Profile" className="profile-image" /> {}
         <h1>Gestor de Tareas</h1>
       </div>
       <p>
