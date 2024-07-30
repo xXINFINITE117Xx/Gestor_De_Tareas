@@ -16,8 +16,6 @@ const Task = ({ task, toggleTaskCompletion, deleteTask, setCurrentTask }) => {
         checked={task.completed}
         onChange={() => toggleTaskCompletion(task.id)}
       />
-      <button onClick={() => setCurrentTask(task)}>Editar</button>
-      <button onClick={() => deleteTask(task.id)}>Eliminar</button>
     </div>
   );
 };
