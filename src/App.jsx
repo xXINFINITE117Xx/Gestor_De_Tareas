@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TaskForm from "./Components/TaskForm/TaskForm";
 import TaskList from "./Components/TaskList/TaskList";
+import profileImage from "./images/profile.jpg"; 
+import "./Styles/styles.css"; 
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -34,21 +36,34 @@ const App = () => {
     return true;
   });
 
+  const pendingCount = tasks.filter((task) => !task.completed).length;
+  const completedCount = tasks.filter((task) => task.completed).length;
+
   return (
     <div className="app">
-      <h1>Gestor de Tareas</h1>
+      <div className="header">
+        <img src={profileImage} alt="Profile" className="profile-image" />
+        <h1>Gestor de Tareas</h1>
+      </div>
       <p>
-        usted tiene {tasks.filter((task) => !task.completed).length} pendientes
-        y {tasks.filter((task) => task.completed).length} terminadas
+        usted tiene{" "}
+        <span className={`count ${pendingCount > 0 ? "pending" : ""}`}>
+          {pendingCount} pendientes
+        </span>{" "}
+        y
+        <span className={`count ${completedCount > 0 ? "completed" : ""}`}>
+          {" "}
+          {completedCount} terminadas
+        </span>
       </p>
       <TaskForm
         addTask={addTask}
         editTask={editTask}
         currentTask={currentTask}
       />
-      <div className="filter">
+      <div className="filter-container">
         <label>Filtrar por: </label>
-        <select className="selector" value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="all">Todas</option>
           <option value="pending">Pendientes</option>
           <option value="completed">Completadas</option>
